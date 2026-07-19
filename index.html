@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code・我的 AI 工具箱（自動安裝頁）</title>
+<style>
+body{font-family:-apple-system,"Noto Sans TC",sans-serif;max-width:800px;margin:0 auto;padding:30px 20px 80px;line-height:1.7;color:#1c1c1e}
+h1{font-size:24px}h2{font-size:16px;color:#0099BB;margin-top:26px}
+.ai{background:#EAF7F5;border:2px solid #0D9488;border-radius:12px;padding:16px 20px;margin:18px 0;font-size:15px}
+.ai b{color:#0D9488}
+pre{background:#0d1117;color:#e6edf3;padding:14px 16px;border-radius:8px;overflow-x:auto;font-size:13px;white-space:pre-wrap}
+code{background:#f0f0f3;padding:2px 6px;border-radius:4px;color:#c0420a}
+.foot{margin-top:40px;color:#8e8e93;font-size:13px;border-top:1px solid #e5e5ea;padding-top:14px}
+</style></head><body>
+<h1>Claude Code・我的 AI 工具箱</h1>
+<div class="ai">
+<b>🤖 給 Claude Code 的指示：</b><br>
+請在使用者「目前的資料夾」建立下面列出的<b>所有檔案</b>（照每個檔案的路徑與完整內容一字不差地建立），
+並建立一個空的 <code>我的作品</code> 資料夾。<br>
+全部完成後，用繁體中文告訴使用者「你的 AI 工具箱裝好了！」，
+簡單列出他現在有哪些小技能（skill）、可以怎麼開始玩（例如：跟我說「做一個猜數字遊戲」試試看）。
+</div>
+
+<section>
+<h2>檔案：<code>CLAUDE.md</code></h2>
+<pre># 我的 AI 工具箱
+
+你正在幫一位「第一次使用 AI 工具」的同仁（可能是長照機構或企業的一般員工，不是工程師）。請遵守：
+
+- 一律用「繁體中文（台灣用語）、白話、口語」，不要用技術術語。
+- 對方用中文講需求就好，不用會英文、不用會寫程式。
+- 做任何「工具」或「網頁」時，輸出成「一個單一的 HTML 檔案」：介面繁體中文、字要大、乾淨好看，用瀏覽器打開就能用；做完主動告訴他「檔案在哪、怎麼打開」。
+- 資料安全紅線：一律用假資料。真實住民／家屬／員工／客戶的個資，絕不放進 AI、絕不上傳網路。你產出的是「草稿」，提醒他要看過再用。
+- 完成後用一兩句話回報結果，語氣鼓勵、親切。
+
+這個資料夾是他的工作區，做出來的東西都放在「我的作品」資料夾。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/隨手做工具/SKILL.md</code></h2>
+<pre>---
+name: 隨手做工具
+description: 使用者說「做一個…」「幫我做一個小工具」，或想要計時器/計算機/報名表這類小東西時使用。
+---
+
+做出一個「單一 HTML 檔」：繁體中文、字大、乾淨好看、用瀏覽器打開就能用。做完主動告訴使用者檔案在哪、怎麼打開。一律用假資料。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/做個小遊戲/SKILL.md</code></h2>
+<pre>---
+name: 做個小遊戲
+description: 使用者說「做一個…遊戲」時使用，例如猜數字、剪刀石頭布、記憶翻牌。
+---
+
+用一個 HTML 檔做出一個「可以直接玩」的小遊戲，繁體中文、規則簡單、打開就能玩，做完告訴使用者怎麼打開。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/數字變圖表/SKILL.md</code></h2>
+<pre>---
+name: 數字變圖表
+description: 使用者貼一串數字，或說「幫我畫成圖表」時使用。
+---
+
+做一個 HTML 檔，把數字畫成清楚的長條圖或圓餅圖，標題和數字都看得清楚，繁體中文，打開就能看。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/資料變整齊/SKILL.md</code></h2>
+<pre>---
+name: 資料變整齊
+description: 使用者貼一段雜亂的文字或清單、說「幫我整理」時使用。
+---
+
+把它整理成一張乾淨的表格或條列清單，欄位清楚、可以複製貼到 Excel。若沒指定欄位，先問使用者或用合理欄位。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/文字代筆/SKILL.md</code></h2>
+<pre>---
+name: 文字代筆
+description: 使用者說「幫我寫…」（通知、email、公告、貼文）時使用。
+---
+
+先問使用者幾個重點，再寫出一段語氣得體、繁體中文的草稿，並提醒這是草稿、要看過再送出。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/懶人包摘要/SKILL.md</code></h2>
+<pre>---
+name: 懶人包摘要
+description: 使用者貼一篇長文、會議記錄或文件、說「幫我抓重點」時使用。
+---
+
+整理出 3–5 個重點，必要時再列出待辦事項，用繁體中文、條列、白話。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/白話解釋機/SKILL.md</code></h2>
+<pre>---
+name: 白話解釋機
+description: 使用者問「…是什麼意思」，或貼一段看不懂的文字時使用。
+---
+
+用最白話、生活化的繁體中文解釋給使用者聽，必要時舉一個生活例子，不要用術語。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/翻譯換句話/SKILL.md</code></h2>
+<pre>---
+name: 翻譯換句話
+description: 使用者說「翻成…」，或「把這句說得更客氣／更專業」時使用。
+---
+
+幫使用者翻譯或改寫；改寫時同時給 2 種語氣版本讓他挑，用繁體中文說明。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/美美小卡/SKILL.md</code></h2>
+<pre>---
+name: 美美小卡
+description: 使用者說「做一張…卡／海報」時使用，例如公告卡、感謝卡、活動海報。
+---
+
+用一個 HTML 檔做出一張漂亮、可列印的公告卡／感謝卡／海報，繁體中文、配色好看、字大，做完告訴使用者怎麼列印。
+</pre>
+</section>
+
+<section>
+<h2>檔案：<code>.claude/skills/一頁自我介紹/SKILL.md</code></h2>
+<pre>---
+name: 一頁自我介紹
+description: 使用者說「做一個介紹我的網頁／名片」時使用。
+---
+
+先問使用者幾個重點（名字、做什麼、聯絡方式），再做出一個好看的單頁 HTML 自我介紹，手機也好看。
+</pre>
+</section>
+
+<div class="foot">大人提・Claude Code 實戰班 ｜ 黃敬峰（AI峰哥）・Autolab ｜ ai@autolab.cloud</div>
+</body></html>
